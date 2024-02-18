@@ -1,6 +1,7 @@
 import array
+from typing import List
 
-def optimalPage(pg, pn, fn):
+def optimalPage(pg: List[int], pn: int, fn: int):
     """
     Function to find the optimal page replacement
     using the optimal page replacement algorithm
@@ -54,5 +55,7 @@ def optimalPage(pg, pn, fn):
                 break
         fr[replaceIndex] = pg[i]
 
-    print("No. of hits =", hit)
-    print("No. of misses =", pn - hit)
+    page_faults: int = pn - hit
+    page_hits: int = hit
+
+    return page_faults, page_hits
